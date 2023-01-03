@@ -1,0 +1,13 @@
+transfer SoundDetector
+
+create UnobedienceDetectionService (safeAndSound) {
+  if Sound.Volume:isLouderthan99 {
+    Device.block ()
+    wait (24<h>)
+    Device.unblock ()
+  }
+}
+
+while True {
+  start UnobedienceDetectionService (SAS)
+}
